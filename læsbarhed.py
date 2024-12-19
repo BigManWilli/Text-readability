@@ -12,8 +12,8 @@ class TextAnalysis:
         self.gammeldags_sprog_detected = False  # Ny variabel til at spore gammeldags sprog
 
     def split_into_sentences(self):
-        # Justeret regex for at ignorere ellipsen (...) og kun splitte på punktum, spørgsmålstegn og udråbstegn
-        return [s.strip() for s in re.split(r'(?<!\.\.\.)[.!?]', self.text) if s.strip()]
+        # Splitter på punktum, spørgsmålstegn og udråbstegn
+        return [s.strip() for s in re.split(r'(?<!\.)[.!?]', self.text) if s.strip()]
 
     def split_into_words(self):
         # Brug regular expressions til at finde ord i teksten
